@@ -1,5 +1,30 @@
 {%extends 'etudiant/index.html'%}
 {%block content%}
-
-<h1>Bienvenue dans la page de gestion des etudiants</h1>
+<h1 style="margin: 20px; text-align: center;">Bienvenue dans la page de gestion des etudiants</h1>
+<table class="table" style="margin-top: 10px;">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col"> code permanent</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Addresse</th>
+        <th scope="col">Image</th>
+        <th scope="col">date de naissance</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%for etu in etudiants%} 
+        <tr>
+          <th scope="row">{{etu.id}}</th>
+          <th>{{etu.code_permanent}}</th>
+          <th>{{etu.prenom}}</th>
+          <th>{{etu.nom}}</th>
+          <th>{{etu.addresse}}</th>
+          <th>{{etu.image}}</th>        
+          <th>{{etu.date_de_naissance}}</th>
+        </tr>
+        {%endfor%}
+      </tbody> 
+ </table> 
 {%endblock%}

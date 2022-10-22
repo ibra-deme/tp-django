@@ -1,0 +1,11 @@
+{%extends 'etudiant/index.html'%}
+
+{%block content%}
+<p>Voulez-vraiment supprimer</p>
+<form action="{% url 'supprimer_etude' item.id%}" method="post">
+    {% csrf_token %}
+    <a class="btn btn-warning" href="{% url 'acceuil' %}">Annuler</a>
+    <input type="submit" class="btn btn-danger" value="confirmer">
+</form>
+
+{%endblock%}

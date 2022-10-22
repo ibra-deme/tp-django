@@ -3,8 +3,7 @@
 <h1 style="margin: 20px; text-align: center;">Bienvenue dans la page de gestion des etudiants</h1>
 <table class="table" style="margin-top: 10px;">
     <thead>
-      <tr>
-        
+      <tr>       
         <th scope="col"> code permanent</th>
         <th scope="col">Prenom</th>
         <th scope="col">Nom</th>
@@ -25,10 +24,11 @@
           <th>{{etu.addresse}}</th>
           <th>{{etu.image}}</th>        
           <th>{{etu.date_de_naissance}}</th>
-          <th><button type="button" class="btn btn-primary">Modifier</button></th>
-          <th><button type="button" class="btn btn-danger">Supprimer</button></th>
+          <th><a  class="btn btn-primary" href="{% url 'modifier_etude' etu.id %}" role="button">Modifier</a></th>
+          <th><a  class="btn btn-danger" href="{% url 'supprimer_etude' etu.id %}" role="button">Supprimer</a></th>
         </tr>
         {%endfor%}
       </tbody> 
  </table> 
+ <a  class="btn btn-success" href="{% url 'ajout_etudiant' %}" role="button">Ajouter un etudiant</a>
 {%endblock%}

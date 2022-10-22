@@ -3,7 +3,7 @@ from email.mime import image
 from enum import unique
 from django.db import models
 
-class Etudiant(models.Model):
+class Etudiants(models.Model):
     code_permanent=models.IntegerField(unique=True)
     prenom=models.CharField(max_length=100)
     nom=models.CharField(max_length=100)

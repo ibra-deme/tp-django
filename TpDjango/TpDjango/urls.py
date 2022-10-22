@@ -19,5 +19,8 @@ from Etudiant import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('etudiant/',views.etudiant)
+    path('etudiant/',views.etudiant,name='acceuil'),
+    path('ajouter/',views.ajouter_etudiant,name='ajout_etudiant'),
+    path('ajouter/<str:pk>',views.modifier_etudiant,name='modifier_etude'),
+    path('supprimer/<str:pk>',views.supprimer_etudiant,name='supprimer_etude')
 ]
